@@ -1,16 +1,42 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Of Ignore Case</title>
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+
+    <h1>Index Of Ignore Case</h1>
+
+    <label for="str">Enter main string: </label>
+    <input type="text" id="str" placeholder="Enter the string">
+    <br><br>
+
+    <label for="subStr">Enter substring: </label>
+    <input type="text" id="subStr" placeholder="Enter the substring">
+    <br><br>
+
+    <button onclick="findIndex()">Find Index</button>
+    <p id="result"></p>
+
+    <script type="text/javascript">
+        // Call the indexOfIgnoreCase function
+        function indexOfIgnoreCase(str, subStr) {
+            const lowerStr = str.toLowerCase();
+            const lowerSubStr = subStr.toLowerCase();
+            return lowerStr.indexOf(lowerSubStr);
+        }
+
+        function findIndex() {
+            const str = document.getElementById("str").value;
+            const subStr = document.getElementById("subStr").value;
+            const result = indexOfIgnoreCase(str, subStr);
+
+            // Display the result
+            document.getElementById("result").innerText = result === -1 ? 'Not found' : `First occurrence at index: ${result}`;
+        }
+    </script>
 
 </body>
-
 </html>
